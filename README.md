@@ -2,7 +2,7 @@
 
 ## Visão Geral do Projeto
 
-Olá\! Eu acabei de concluir um desafio incrível focado em **Inteligência Artificial Generativa** e **Testes de Software**. O objetivo principal foi construir um **Agente de IA** que automatiza a criação de testes unitários em Python, usando o poder do Azure OpenAI.
+Desafio concluído focado em **Inteligência Artificial Generativa** e **Testes de Software**. O objetivo principal foi construir um **Agente de IA** que automatiza a criação de testes unitários em Python, usando o poder do Azure OpenAI.
 
 ### Qual é a ideia?
 
@@ -51,3 +51,51 @@ Documentar este processo foi crucial para meu aprendizado:
 
 -----
 
+## Configuração e Execução
+
+### Pré-requisitos
+
+  * **Python 3.x**
+  * Acesso a um serviço **Azure OpenAI** (com chave, endpoint e nome de *deployment*).
+
+### Passo 1: Configurar Credenciais
+
+1.  Copie o arquivo de exemplo para o arquivo de configuração real:
+    ```bash
+    cp .env.example .env
+    ```
+2.  Preencha o arquivo **`.env`** com suas credenciais do Azure:
+
+<!-- end list -->
+
+```ini
+# .env (PREENCHA AQUI)
+AZURE_OPENAI_ENDPOINT="https://your_service.azure.com/"
+AZURE_OPENAI_API_KEY="your_key_here"
+AZURE_OPENAI_API_VERSION="2024-12-01-preview"
+AZURE_OPENAI_DEPLOYMENT_NAME="gpt-4o-mini" 
+```
+
+### Passo 2: Rodar o Agente
+
+Execute o script principal para gerar o arquivo de testes:
+
+```bash
+python agent.py
+```
+
+### Passo 3: Validar os Testes
+
+Execute o `pytest` para verificar o trabalho do seu Agente de IA:
+
+```bash
+pytest
+```
+
+#### Resultado Esperado
+
+O resultado deve ser a confirmação de que todos os testes gerados pela IA foram executados com sucesso:
+
+```
+============================== 5 passed in 0.XXs ===============================
+```
